@@ -1,0 +1,3 @@
+change name server: ns1.cloudoom.com
+change name server: ns2.cloudoom.com
+change name server: ns3.cloudoom.com
