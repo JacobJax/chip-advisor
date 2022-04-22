@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
    $pwd = $_POST['pwd'];
 
    $log = logIn($conn, $email, $pwd);
-   print_r(json_encode($log));
+   // print_r(json_encode($log));
 
    if($log) {
       
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
          session_start();
          $_SESSION['uid'] = $log['user']['user_id'];
          $_SESSION['fname'] = $log['user']['f_name'];
-         header('Location:../index.php');
+         header('Location: ./index.php');
 
       } else {
          $errors['pwd'] = 'Invalid Log in. Check email/password';

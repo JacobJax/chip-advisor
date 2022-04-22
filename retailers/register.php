@@ -1,43 +1,16 @@
 <?php
 
 require_once('../db/Database.php');
+require_once('../models/Retailer.php');
 $db = new Database();
 $conn = $db->connect();
 
-function getGender($conn) {
-
-   $stmt = $conn->prepare("SELECT * FROM gender");
-   $stmt->execute();
-
-   return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-}
-function getLocation($conn) {
-
-   $stmt = $conn->prepare("SELECT * FROM location");
-   $stmt->execute();
-
-   return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-}
-function getOcc($conn) {
-
-   $stmt = $conn->prepare("SELECT * FROM ocupation");
-   $stmt->execute();
-
-   return $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-}
-
-$gns = getGender($conn);
-$lcts = getLocation($conn);
-$occ = getOcc($conn);
 
 // error checking
 $fname = "";
 $lname = "";
 $email = "";
-
+$shop = "";
 $pwd = "";
 $cpwd = "";
 
@@ -46,7 +19,8 @@ $errors = [
    'lname' => "",
    'email' => "",
    'pwd' => "",
-   'pwd1' => ""
+   'pwd1' => "",
+   'shop' => ""
 ];
 
 // add data to database
@@ -55,9 +29,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    $fname = $_POST['fname'];
    $lname = $_POST['lname'];
    $email = $_POST['email'];
-   $gnd = $_POST['gnd'];
-   $lcn = $_POST['lcn'];
-   $occ = $_POST['occ'];
+   $shop = $_POST['shop'];
    $pwd = $_POST['pwd'];
    $cpwd = $_POST['cpwd'];
 
@@ -67,6 +39,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    }
    if(!preg_match("/^[a-z ,.'-]+$/i", $fname)){
       $errors['fname'] = "Invalid name entry";
+   }
+   if(!preg_match("/^[a-z ,.'-]+$/i", $shop)){
+      $errors['shop'] = "Invalid shop entry";
    }
    if(!preg_match("/^[a-z ,.'-]+$/i", $lname)){
       $errors['lname'] = "Invalid name entry";
@@ -80,19 +55,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
    if(!array_filter($errors)) {
-      $query = "INSERT INTO users (f_name, l_name, location_id, gender_id, occ_id, email, password)
-            VALUES (:fname, :lname, :lcn, :gnd, :occ, :email, :pwd)";
+      $rArray = [
+         'fname' => $fname,
+         'lname' => $lname,
+         'shop' => $shop,
+         'email' => $email,
+         'pwd' => $pwd
+      ];
 
-      $stmt = $conn->prepare($query);
-      $stmt->bindValue(':fname', $fname);
-      $stmt->bindValue(':lname', $lname);
-      $stmt->bindValue(':lcn', $lcn);
-      $stmt->bindValue(':gnd', $gnd);
-      $stmt->bindValue(':occ', $occ);
-      $stmt->bindValue(':email', $email);
-      $stmt->bindValue(':pwd', password_hash($pwd, PASSWORD_DEFAULT));
-
-      $stmt->execute();
+      $retailer = new Retailer($conn);
+      $retailer->addRetailer($rArray);
 
       header('Location: login.php');
    }
@@ -116,30 +88,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="email">Email:</label><br>
             <input type="email" placeholder="Enter email" name="email" required><br>
             <label for="err"><small style="color: red;"><?php echo $errors['email'] ?></small></label><br>
-            <div class="lng">
-               <div class="gn">
-                  <label for="p-age">Gender:</label><br>
-                  <select class="form-control" name="gnd" style="height: 30px; width: 170px; margin: 10px 0;">
-                     <?php foreach($gns as $type) { ?>
-                              <option value=<?php echo $type["gender_id"] ?> ><?php echo $type["gender_desc"] ?></option>
-                     <?php } ?>
-                  </select>
-               </div>
-               <div class="ln">
-                  <label for="p-age">Location:</label><br>
-                  <select class="form-control" name="lcn" style="height: 30px; width: 170px; margin: 10px 0;">
-                     <?php foreach($lcts as $type) { ?>
-                              <option value=<?php echo $type["location_id"] ?> ><?php echo $type["location_desc"] ?></option>
-                     <?php } ?>
-                  </select>
-               </div>
-            </div>
-            <label for="p-age">Select occupation:</label><br>
-            <select class="form-control" name="occ" style="height: 30px; width: 100%; margin: 10px 0;">
-               <?php foreach($occ as $type) { ?>
-                  <option value=<?php echo $type["occ_id"] ?> ><?php echo $type["occ_desc"] ?></option>
-               <?php } ?>
-            </select><br>
+            <label for="email">Shop:</label><br>
+            <input type="text" placeholder="Enter shop" name="shop" required><br>
+            <label for="err"><small style="color: red;"><?php echo $errors['shop'] ?></small></label><br>
             <label for="psw">Password:</label><br>
             <input type="password" placeholder="Enter Password" name="pwd" required><br>
             <label for="err"><small style="color: red;"><?php echo $errors['pwd'] ?></small></label><br>

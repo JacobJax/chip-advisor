@@ -6,7 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Chip advisor</title>
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -16,10 +16,9 @@
       </div>
       <div class="nav-options">
          <ul class="flex-r">
-            <li><a href="#">Top</a></li>
-            <li><a href="#">Explore</a></li>
-            <li><a href="#">Recommend</a></li>
-            <li><a href="./forum/index.php">Forum</a></li>
+            <li><a href="<?php if(isset($_SESSION['uid'])){ echo './index.php'; } else {echo "#";} ?>">My PCs</a></li>
+            <li><a href="<?php if(isset($_SESSION['uid'])){ echo './add.php?id=' . $_SESSION['uid']; } else {echo "#";} ?>">Add PC</a></li>
+            <!-- <li><a href="<?php if(isset($_SESSION['uid'])){ echo '../forum/index.php'; } else {echo "#";} ?>">Forum</a></li> -->
          </ul>
       </div>
       <div class="nav-action">
@@ -28,15 +27,15 @@
                <?php if(isset($_SESSION['uid'])) {?>
                   <a href="#">Hi <?php echo $_SESSION['fname'] ?></a>
                <?php } else {?>
-                  <a href="./login/register.php">Sign up</a>
+                  <a href="./register.php">Sign up</a>
                <?php }?>
             </li>
             <li>|</li>
             <li>
                <?php if(isset($_SESSION['uid'])) {?>
-                  <a href="./login/logout.php">Log out</a>
+                  <a href="./logout.php">Log out</a>
                <?php } else {?>
-                  <a href="./login/login.php">Log in</a>
+                  <a href="./login.php">Log in</a>
                <?php }?>
             </li>
          </ul>

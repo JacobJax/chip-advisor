@@ -8,6 +8,14 @@
    font-family: 'Fira Code', monospace;
 }
 
+/* details */
+details > summary {
+   list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
 a, li{
    text-decoration: none;
 }
@@ -109,3 +117,109 @@ input:focus{
    justify-content: space-between;
 }
 
+/* retailer pc */
+.r-pc-container{
+   padding: 20px;
+}
+.r-pc-container h2{
+   text-align: center;
+   background-color: #fafafa;
+   padding: 50px 70px;
+   width: 50%;
+   margin: auto;
+}
+
+/* file */
+input[type=file]::file-selector-button {
+   padding: .5em;
+}
+
+/* retailer pcs */
+.r-pc{
+   width: 70%;
+   margin: auto;
+   margin-bottom: 10px;
+   background-color: #fafafa;
+   padding: 15px;
+   display: flex;
+   gap: 20px;
+}
+.r-ill{
+   width: 200px;
+   height: 200px;
+}
+.r-ill img{
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+}
+.r-det{
+   width: 75%;
+   padding-top: 10px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.r-det-top{
+   padding-bottom: 5px;
+   border-bottom: #6a1b9a 1px solid;
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+}
+.pc-name {
+   font-weight: lighter;
+   margin-bottom: 10px;
+}
+
+/* rpc table */
+.rpc-t{
+   width: 80%;
+   margin: auto;
+   margin-bottom: 20px;
+   text-align: center;
+}
+.rpc-t th{
+   background-color: #6a1b9a;
+   color: #fff;
+   padding: 5px;
+}
+.rpc-t td {
+   padding: 5px;
+}
+.rpc-t tr:nth-child(odd){background-color: #fafafa;}
+
+/* post - t */
+.post-t-form{
+   width: 50%;
+   margin: auto;
+   background-color: #fff;
+   padding: 20px;
+   margin-bottom: 10px;
+}
+.post-t-form input[type="text"] {
+   width: 85%;
+   height: 40px;
+   padding-left: 10px;
+}
+.post-t-form input[type="submit"]{
+   padding: 9px 22px;
+}
+.post{
+   background-color: #fff;
+   padding: 20px;
+   margin: auto;
+   margin-bottom: 10px;
+   width: 50%;
+}
+.post-head{
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+   padding-bottom: 5px;
+   border-bottom: #6a1b9a .5px solid;
+}
+.post .body{
+   padding: 5px 0;
+   font-size: 14px;
+}
