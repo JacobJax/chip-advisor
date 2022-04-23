@@ -6,7 +6,7 @@ $conn = $db->connect();
 
 function getPosts($conn)
 {
-   $stmt = $conn->prepare("SELECT * FROM posts");
+   $stmt = $conn->prepare("SELECT * FROM posts ORDER BY created_on DESC");
    $stmt->execute();
 
    return $stmt->fetchAll(PDO::FETCH_ASSOC);

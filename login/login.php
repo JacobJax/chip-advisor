@@ -8,6 +8,9 @@ if(isset($_SESSION['uid'])) {
    session_destroy();
 }
 
+$email = "";
+$pwd = "";
+
 $errors = array(
    'pwd' => ''
 );
@@ -37,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
    $pwd = $_POST['pwd'];
 
    $log = logIn($conn, $email, $pwd);
-   print_r(json_encode($log));
+   // print_r(json_encode($log));
 
    if($log) {
       
@@ -69,9 +72,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
          <div class="container">
             <label for="err"><small style="color: red;"><?php echo $errors['pwd'] ?></small></label><br>
             <label for="email">Email:</label><br>
-            <input type="email" placeholder="Enter email" name="email" required><br>
+            <input type="email" placeholder="Enter email" name="email" required value="<?php echo $email ?>"><br>
             <label for="psw">Password:</label><br>
-            <input type="password" placeholder="Enter Password" name="pwd" required><br>
+            <input type="password" placeholder="Enter Password" name="pwd" required value="<?php echo $pwd ?>"><br>
             <input type="submit" value="Log in">
             <br>
             <span><small>Dont have an account? click <a href="./register.php">Here</a> to register</small></span>

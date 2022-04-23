@@ -7,6 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Chip advisor</title>
    <link rel="stylesheet" href="style.css">
+   <script src="./js/main.js" defer></script>
 </head>
 <body>
 
@@ -16,8 +17,7 @@
       </div>
       <div class="nav-options">
          <ul class="flex-r">
-            <li><a href="#">Top</a></li>
-            <li><a href="#">Explore</a></li>
+            <li><a href="#pcs">Explore</a></li>
             <li><a href="#">Recommend</a></li>
             <li><a href="./forum/index.php">Forum</a></li>
          </ul>

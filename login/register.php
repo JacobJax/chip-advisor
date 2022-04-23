@@ -29,9 +29,6 @@ function getOcc($conn) {
 
 }
 
-$gns = getGender($conn);
-$lcts = getLocation($conn);
-$occ = getOcc($conn);
 
 // error checking
 $fname = "";
@@ -120,6 +117,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                <div class="gn">
                   <label for="p-age">Gender:</label><br>
                   <select class="form-control" name="gnd" style="height: 30px; width: 170px; margin: 10px 0;">
+                  <?php $gns = getGender($conn); ?>
                      <?php foreach($gns as $type) { ?>
                               <option value=<?php echo $type["gender_id"] ?> ><?php echo $type["gender_desc"] ?></option>
                      <?php } ?>
@@ -128,6 +126,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                <div class="ln">
                   <label for="p-age">Location:</label><br>
                   <select class="form-control" name="lcn" style="height: 30px; width: 170px; margin: 10px 0;">
+                     <?php $lcts = getLocation($conn); ?>
                      <?php foreach($lcts as $type) { ?>
                               <option value=<?php echo $type["location_id"] ?> ><?php echo $type["location_desc"] ?></option>
                      <?php } ?>
@@ -136,6 +135,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <label for="p-age">Select occupation:</label><br>
             <select class="form-control" name="occ" style="height: 30px; width: 100%; margin: 10px 0;">
+               <?php $occ = getOcc($conn); ?>
                <?php foreach($occ as $type) { ?>
                   <option value=<?php echo $type["occ_id"] ?> ><?php echo $type["occ_desc"] ?></option>
                <?php } ?>
