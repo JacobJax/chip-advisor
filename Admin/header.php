@@ -16,7 +16,7 @@
       </div>
       <div class="nav-options">
          <ul class="flex-r">
-            <li><a href="<?php if(isset($_SESSION['uid'])){ echo './index.php'; } else {echo "#";} ?>">PCs</a></li>
+            <li><a href="<?php if(isset($_SESSION['uid'])){ echo './pcs.php'; } else {echo "#";} ?>">PCs</a></li>
             <li><a href="<?php if(isset($_SESSION['uid'])){ echo './users.php'; } else {echo "#";} ?>">Users</a></li>
             <li><a href="<?php if(isset($_SESSION['uid'])){ echo './retailers.php'; } else {echo "#";} ?>">Retailers</a></li>
          </ul>
@@ -25,10 +25,8 @@
          <ul class="flex-r">
             <li>
                <?php if(isset($_SESSION['uid'])) {?>
-                  <a href="#">Hi <?php echo $_SESSION['fname'] ?></a>
-               <?php } else {?>
-                  <a href="./register.php">Sign up</a>
-               <?php }?>
+                  <a href="#">Welcome <?php echo $_SESSION['fname'] ?></a>
+               <?php } ?>
             </li>
             <li>|</li>
             <li>

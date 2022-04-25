@@ -119,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <select class="form-control" name="gnd" style="height: 30px; width: 170px; margin: 10px 0;">
                   <?php $gns = getGender($conn); ?>
                      <?php foreach($gns as $type) { ?>
-                              <option value=<?php echo $type["gender_id"] ?> ><?php echo $type["gender_desc"] ?></option>
+                        <option value=<?php echo $type["gender_id"] ?> ><?php echo $type["gender_desc"] ?></option>
                      <?php } ?>
                   </select>
                </div>
@@ -128,7 +128,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <select class="form-control" name="lcn" style="height: 30px; width: 170px; margin: 10px 0;">
                      <?php $lcts = getLocation($conn); ?>
                      <?php foreach($lcts as $type) { ?>
-                              <option value=<?php echo $type["location_id"] ?> ><?php echo $type["location_desc"] ?></option>
+                        <option value=<?php echo $type["location_id"] ?> ><?php echo $type["location_desc"] ?></option>
                      <?php } ?>
                   </select>
                </div>

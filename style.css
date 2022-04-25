@@ -110,6 +110,13 @@ nav li{
    width: 40%;
    text-align: center;
 }
+.lb-btn{
+   background-color: #6a1b9a;
+   color: #fff;
+   padding: 5px;
+   width: 40%;
+   text-align: center;
+}
 .v-btn{
    width: 40%;
    background-color: #ffd740;
@@ -253,4 +260,24 @@ input[type=file]::file-selector-button {
 .post .body{
    padding: 5px 0;
    font-size: 14px;
+}
+
+/* r-pc */
+.r-pc-cont{
+   margin: auto;
+   padding: 20px;
+   width: 70%;
+   display: flex;
+   gap: 15px;
+   justify-content: space-evenly;
+}
+.cont-r{
+   border: #6a1b9a 1px solid;
+   border-radius: 7px;
+}
+.p-10{
+   padding: 10px;
+}
+.bg-diff{
+   background-color: #fafafa;
 }

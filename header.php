@@ -18,7 +18,7 @@
       <div class="nav-options">
          <ul class="flex-r">
             <li><a href="#pcs">Explore</a></li>
-            <li><a href="#">Recommend</a></li>
+            <li><a href="./pcs/recommend.php">Recommend</a></li>
             <li><a href="./forum/index.php">Forum</a></li>
          </ul>
       </div>

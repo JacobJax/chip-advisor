@@ -46,20 +46,20 @@ function checkLike($pid, $conn)
                </div>
                <br>
                <div class="pc-action">
-                  <a href="#" class="l-btn">
-                     <input type="hidden" name="pid" id="pid" value="<?php echo $pc['pc_id'] ?>">
-                     <?php
-                        if(!isset($_SESSION['uid'])){ 
-                           echo "❤Like";
-                        } else { 
+                  <?php if(!isset($_SESSION['uid'])){ ?>
+                     <a href="./login/login.php" class="lb-btn">❤Like</a>
+                  <?php } else { ?>
+                     <a href="#" class="l-btn">
+                        <input type="hidden" name="pid" id="pid" value="<?php echo $pc['pc_id'] ?>">
+                        <?php
                            if(checkLike($pc['pc_id'], $conn)){
                            echo "👍Liked"; 
                            } else {
                               echo "❤Like";
                            }
-                        } 
-                     ?>
-                  </a>
+                        ?>
+                     </a>
+                  <?php } ?>
                   <a href="./pcs/pc.php?pid=<?php echo $pc['pc_id'] ?>" class="v-btn">💻View</a>
                </div>
             </div>
