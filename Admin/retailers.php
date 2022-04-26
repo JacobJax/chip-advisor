@@ -37,3 +37,6 @@ $conn = $db->connect();
       <?php }?>
    </table>
 </section>
+
+</body>
+</html>

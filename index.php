@@ -29,7 +29,7 @@ function checkLike($pid, $conn)
       <div class="jumbo-head">
          <h1>Get the Best Recommendation and Deal that suits your need</h1>
          <a href="#pcs" class="btn">Explore</a>
-         <a href="#" class="btn-g">Recommend a pc</a>
+         <a href="./pcs/recommend.php" class="btn-g">Recommend a pc</a>
       </div>
    </section>
 

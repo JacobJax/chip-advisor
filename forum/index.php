@@ -46,16 +46,17 @@ function getName($id, $conn)
          <?php foreach($posts as $post) {?>
             <div class="post">
                <div class="post-head">
-                  <p><?php if($post['user_id'] == $_SESSION['uid']){echo "You";} else {echo getName($post['user_id'], $conn)[0]['f_name'];} ?></p>
+                  <p style="font-size: 14px; color: #bdbdbd;"><?php if($post['user_id'] == $_SESSION['uid']){echo "<span style='font-size: 20px'>👩‍🚀</span> You";} else {echo "<span style='font-size: 17px'>👩‍🚀</span> " . getName($post['user_id'], $conn)[0]['f_name'];} ?></p>
                   <small><?php echo $post['created_on'] ?></small>
                </div>
+               <br>
                <div class="body">
-                  <p><?php echo $post['caption'] ?></p>
+                  <p style="font-size: 16px;"><?php echo $post['caption'] ?></p>
                </div>
                <br>
                <div class="action">
                   <details style="width: 80%;">
-                     <summary style="color: blue; cursor: pointer;">Comment | <a href="#">Like</a></summary>
+                     <summary style="color: blue; cursor: pointer; font-size: 14px;">Comment 🗨</summary>
                      <form class="cmt-frm">
                         <br>
                         <input type="hidden" name="uid" value="<?php echo $_SESSION['uid'] ?>">
@@ -67,7 +68,7 @@ function getName($id, $conn)
                      <div class="coment">
                         <?php $cmts = getComments($post['post_id'], $conn) ?>
                         <?php foreach($cmts as $cmt) {?>
-                           <p style="font-weight: lighter; font-size: 15px;"><span style="color: #bdbdbd; font-size: 13px;"><?php echo getName($cmt['user_id'], $conn)[0]['f_name'] . ": " ?></span><?php echo $cmt['comment'] ?></p>
+                           <p style="font-weight: lighter; font-size: 15px;"><span style="color: #bdbdbd; font-size: 13px;"><?php echo "<span style='font-size: 20px'>👨‍💻</span> ". getName($cmt['user_id'], $conn)[0]['f_name'] . ": " ?></span><?php echo $cmt['comment'] ?></p>
                         <?php }?>
                      </div>
                   </details>

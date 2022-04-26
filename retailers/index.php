@@ -25,8 +25,12 @@ $conn = $db->connect();
                      <?php if(!$pc['isActive']) {?>
                         <a href="specs.php?id=<?php echo $pc['pc_id'] ?>" class="btn">Activate</a>
                      <?php } else {?>
-                        <p>Active</>
+                        <p>Active</p>
                      <?php }?>
+                     <p>
+                        <small><a href="./editpc.php?pid=<?php echo $pc['pc_id'] ?>">Edit</a></small>
+                        <small><a href="./delete.php?pid=<?php echo $pc['pc_id'] ?>">Delete</a></small>
+                     </p>
                      <small><p>Created on: <?php echo $pc['created_on'] ?></p></small>
                   </div>
                   <div class="r-det-bottom">

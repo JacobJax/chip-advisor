@@ -58,3 +58,6 @@ function get_users($conn)
       <?php }?>
    </table>
 </section>
+
+</body>
+</html>

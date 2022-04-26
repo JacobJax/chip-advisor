@@ -19,9 +19,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    $name = $_POST['name'];
 
    // handle user input errors
-   if(!preg_match("/^[a-z ,.'-]+$/i", $name)){
-      $errors['name'] = "Invalid name entry";
-   }
+   // if(!preg_match("/^[a-z ,.'-]+$/i", $name)){
+   //    $errors['name'] = "Invalid name entry";
+   // }
 
    if(!array_filter($errors)) {
 
