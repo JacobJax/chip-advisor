@@ -25,15 +25,19 @@ function checkLike($pid, $conn)
 }
 
 ?>
-   <section class="jumbo">
-      <div class="jumbo-head">
-         <h1>Get the Best Recommendation and Deal that suits your need</h1>
-         <a href="#pcs" class="btn">Explore</a>
-         <a href="./pcs/recommend.php" class="btn-g">Recommend a pc</a>
+   <section>
+      <div class="span-max jumbo">
+         <div class="jumbo-head">
+            <h1>Get the Best Recommendation and Deal that suits your need</h1>
+            <div class="jumbo-links">
+               <a href="#pcs" class="btn">Explore</a>
+               <a href="./pcs/recommend.php" class="btn-g">Recommend a pc</a>
+            </div>
+         </div>
       </div>
    </section>
 
-   <section class="pc-container" id="pcs">
+   <section class="pc-container span-max" id="pcs">
       <?php $pcs = getPCS($conn) ?>
       <?php foreach($pcs as $pc) {?>
          <div class="pc">
@@ -47,20 +51,20 @@ function checkLike($pid, $conn)
                <br>
                <div class="pc-action">
                   <?php if(!isset($_SESSION['uid'])){ ?>
-                     <a href="./login/login.php" class="lb-btn">❤Like</a>
+                     <a href="./login/login.php" class="lb-btn sm-btn">❤ Like</a>
                   <?php } else { ?>
-                     <a href="#" class="l-btn">
+                     <a href="#" class="l-btn sm-btn">
                         <input type="hidden" name="pid" id="pid" value="<?php echo $pc['pc_id'] ?>">
                         <?php
                            if(checkLike($pc['pc_id'], $conn)){
                            echo "👍Liked"; 
                            } else {
-                              echo "❤Like";
+                              echo "❤ Like";
                            }
                         ?>
                      </a>
                   <?php } ?>
-                  <a href="./pcs/pc.php?pid=<?php echo $pc['pc_id'] ?>" class="v-btn">💻View</a>
+                  <a href="./pcs/pc.php?pid=<?php echo $pc['pc_id'] ?>" class="v-btn sm-btn">💻 View</a>
                </div>
             </div>
          </div>
