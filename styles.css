@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@300&family=Space+Grotesk&family=Space+Mono&display=swap');
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   /* outline: rosybrown .7px solid; */
+}
+
+:root {
+
+   /* spacing */
+   --lg-spacing: 2.25rem;
+   --md-spacing: 1.25rem;
+   --sm-spacing: .7rem;
+
+   /* width */
+   --span-width: 920px;
+
+   /* fonts */
+   --text-xs: 0.75rem;
+   --text-sm: 0.875rem;
+   --ln-sm: 1.25rem;
+
+   --text-md: 1.5rem;
+   --ln-md: 1.65rem;
+
+   --text-lg: 2.25rem;
+   --ln-lg: 1.75rem;
+
+}
+
+html {
+   scroll-behavior: smooth;
+}
+body {
+   font-family:'Fira Code', monospace;
+}
+
+/* reset classes */
+.span-max {
+   max-width: calc(968px);
+   margin: auto;
+}
+
+/* details */
+section {
+   margin-bottom: var(--lg-spacing);
+}
+details > summary {
+   list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+a{
+   text-decoration: none;
+   font-size: var(--text-sm);
+}
+ul{
+   list-style: none;
+}
