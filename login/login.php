@@ -63,22 +63,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 <?php require_once("./header.php") ?>
 
-   <div class="det-form-container">
-      <h3 style="text-align: center;">Log in</h3>
-      <br>
-      <form action="login.php" method="post" class="det-form">
-         <div class="container">
-            <label for="err"><small style="color: red;"><?php echo $errors['pwd'] ?></small></label><br>
-            <label for="email">Email:</label><br>
-            <input type="email" placeholder="Enter email" name="email" required value="<?php echo $email ?>"><br>
-            <label for="psw">Password:</label><br>
-            <input type="password" placeholder="Enter Password" name="pwd" required value="<?php echo $pwd ?>"><br>
-            <input type="submit" value="Log in">
-            <br>
-            <span><small>Dont have an account? click <a href="./register.php">Here</a> to register</small></span>
-         </div>
-      </form>
-   </div>
+   <section class="span-max">
+      <div class="det-form-container">
+         <h3 style="text-align: center;">Log in</h3>
+         <form action="login.php" method="post" class="det-form rounded-edge">
+            <div class="container">
+               <label for="err"><small style="color: red;"><?php echo $errors['pwd'] ?></small></label><br>
+               <label for="email">Email:</label><br>
+               <input type="email" class="rounded-edge" placeholder="Enter email" name="email" required value="<?php echo $email ?>"><br>
+               <label for="psw">Password:</label><br>
+               <input type="password" class="rounded-edge" placeholder="Enter Password" name="pwd" required value="<?php echo $pwd ?>"><br>
+               <input type="submit" class="rounded-edge" value="Log in">
+               <br>
+               <span><small>Dont have an account? click <a href="./register.php">Here</a> to register</small></span>
+            </div>
+         </form>
+      </div>
+   </section>
    
 </body>
 </html>
