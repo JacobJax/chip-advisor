@@ -48,7 +48,6 @@ function checkLike($pid, $conn)
                <div class="price">
                   <p>Price: <?php echo $pc['price'] ?></p>
                </div>
-               <br>
                <div class="pc-action">
                   <?php if(!isset($_SESSION['uid'])){ ?>
                      <a href="./login/login.php" class="lb-btn sm-btn">❤ Like</a>
