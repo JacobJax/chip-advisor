@@ -2,7 +2,7 @@
 
 /* navbar */
 nav{
-   margin-bottom: var(--md-spacing);
+   margin-bottom: var(--sm-spacing);
    position: sticky;
    top: 0;
    background-color: #fff;
@@ -19,6 +19,8 @@ nav{
    display: flex;
    justify-content: space-between;
    align-items: center;
+   padding-left: var(--md-spacing);
+   padding-right: var(--md-spacing);
 }
 .link-toggle img{
    width: 2.5rem;
