@@ -46,7 +46,7 @@ function checkLike($pid, $conn)
                <h4><?php echo $pc['name'] ?></h4>
                <p><?php echo "ram: " . $pc['ram'] . " | hdd: " . $pc['hdd'] . " | screen: " . $pc['screen'] . " | os: " . $pc['os'] . " | body: " . $pc['body'] ?></p>
                <div class="price">
-                  <p>Price: <?php echo $pc['price'] ?></p>
+                  <p>Price: Ksh<?php echo $pc['price'] ?></p>
                </div>
                <br>
                <div class="pc-action">

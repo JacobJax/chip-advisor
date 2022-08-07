@@ -36,33 +36,32 @@ function getName($id, $conn)
 
 <section class="r-pc-container">
    <div class="post-t">
-      <form class="post-t-form" id="post-f">
-         <input type="text" name="post" id="" placeholder="Whats on your mind" required>
-         <input type="submit" value="Post">
-      </form>
+      <div class="post-t-form">
+         <form id="post-f">
+            <input type="text" name="post" id="" placeholder="Whats on your mind" required>
+            <input type="submit" value="Post">
+         </form>
+      </div>
 
       <?php $posts = getPosts($conn); ?>
       <?php if($posts) { ?>
          <?php foreach($posts as $post) {?>
             <div class="post">
                <div class="post-head">
-                  <p style="font-size: 14px; color: #bdbdbd;"><?php if($post['user_id'] == $_SESSION['uid']){echo "<span style='font-size: 20px'>👩‍🚀</span> You";} else {echo "<span style='font-size: 17px'>👩‍🚀</span> " . getName($post['user_id'], $conn)[0]['f_name'];} ?></p>
-                  <small><?php echo $post['created_on'] ?></small>
+                  <p><?php if($post['user_id'] == $_SESSION['uid']){echo "<span>👩‍🚀</span> You";} else {echo "<span>👩‍🚀</span> " . getName($post['user_id'], $conn)[0]['f_name'];} ?></p>
+                  <p><small><?php echo $post['created_on'] ?></small></p>
                </div>
-               <br>
-               <div class="body">
-                  <p style="font-size: 16px;"><?php echo $post['caption'] ?></p>
+               <div>
+                  <p style="font-size: 1.1rem;"><?php echo $post['caption'] ?></p>
                </div>
-               <br>
                <div class="action">
-                  <details style="width: 80%;">
-                     <summary style="color: blue; cursor: pointer; font-size: 14px;">Comment 🗨</summary>
+                  <details>
+                     <summary style="color: blue; cursor: pointer; font-size: 14px;">Comments</summary>
                      <form class="cmt-frm">
-                        <br>
                         <input type="hidden" name="uid" value="<?php echo $_SESSION['uid'] ?>">
                         <input type="hidden" name="pid" value="<?php echo $post['post_id'] ?>">
-                        <input type="text" name="cmt" id="cmnt" placeholder="Enter comment" required style="width: 68%; padding: 3px; font-size: 13px; border: none; border-bottom: 2px #6a1b9a solid;">
-                        <input type="submit" value="Comment" style="padding: 3px 10px; background-color: #fafafa;">
+                        <input type="text" name="cmt" id="cmnt" placeholder="Enter comment" required style="width: 90%; padding: 3px; font-size: 13px; border: none;">
+                        <input type="submit" value="Comment" style="padding: 3px 10px; color: #6a1b9a; border: none; border-radius: 3px; cursor: pointer;">
                         <br><br>
                      </form>
                      <div class="coment">

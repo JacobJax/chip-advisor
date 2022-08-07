@@ -4,7 +4,7 @@
 nav{
    margin-bottom: var(--sm-spacing);
    position: sticky;
-   top: 0;
+   top: .4rem;
    background-color: #fff;
 }
 .flex-r{
@@ -66,6 +66,11 @@ nav{
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
    gap: var(--md-spacing);
+   font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", 
+    "Ubuntu", "Cantarell", "Fira Sans", 
+    "Droid Sans", "Helvetica Neue", sans-serif
+   ;
 }
 .pc{
    padding: var(--md-spacing);
@@ -86,8 +91,6 @@ nav{
    margin-top: auto;
 }
 .pc-details > p{
-   font-family: 'Roboto', sans-serif;
-   color: #bdbdbd;
    font-size: var(--text-sm);
 }
 .pc-action{
@@ -163,48 +166,52 @@ input[type=file]::file-selector-button {
 }
 
 /* retailer pcs */
-.r-pc{
-   width: 70%;
-   margin: auto;
-   margin-bottom: 10px;
-   background-color: #fafafa;
-   padding: 15px;
-   display: flex;
-   gap: 20px;
+@media screen and (min-width: 768px) {
+   
+   .r-pc{
+      margin: auto;
+      margin-bottom: .9rem;
+      background-color: #fafafa;
+      padding: 1rem;
+      display: flex;
+      gap: 1.2rem;
+   }
+   .r-ill{
+      width: 50%;
+   }
+   .r-det{
+      width: 75%;
+      padding-top: .8rem;
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+   }
+   .r-det-top{
+      padding-bottom: 5px;
+      border-bottom: #6a1b9a 1px solid;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+   }
+   .pc-name {
+      font-weight: lighter;
+      margin-bottom: 10px;
+   }
 }
-.r-ill{
-   width: 200px;
-   height: 200px;
+.r-pc{
+   max-width: 920px;
 }
 .r-ill img{
    object-fit: cover;
    width: 100%;
    height: 100%;
 }
-.r-det{
-   width: 75%;
-   padding-top: 10px;
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-}
-.r-det-top{
-   padding-bottom: 5px;
-   border-bottom: #6a1b9a 1px solid;
-   display: flex;
-   justify-content: space-between;
-   align-items: baseline;
-}
-.pc-name {
-   font-weight: lighter;
-   margin-bottom: 10px;
-}
 
 /* rpc table */
 .rpc-t{
    width: 80%;
    margin: auto;
-   margin-bottom: 20px;
+   margin-bottom: 1.2rem;
    text-align: center;
 }
 .rpc-t th{
@@ -219,37 +226,66 @@ input[type=file]::file-selector-button {
 
 /* post - t */
 .post-t-form{
-   width: 50%;
+   max-width: 768px;
    margin: auto;
    background-color: #fff;
-   padding: 20px;
+   padding: .6rem;
    margin-bottom: 10px;
+   border-radius: 3px;
+}
+.post-t-form form{
+   outline: #6a1b9a 1px solid;
+   border-radius: 3px;
+   padding: .6rem;
+   display: flex;
+   gap: .5rem;
 }
 .post-t-form input[type="text"] {
-   width: 85%;
    height: 40px;
    padding-left: 10px;
+   width: 90%;
+   background-color: #fafafa;
+   border-radius: 3px;
+   border: none;
 }
 .post-t-form input[type="submit"]{
    padding: 9px 22px;
+   background-color: #6a1b9a;
+   color: #fff;
+   border: none;
+   border-radius: 3px;
+   cursor: pointer;
 }
 .post{
    background-color: #fff;
-   padding: 20px;
+   padding: .6rem;
    margin: auto;
    margin-bottom: 10px;
-   width: 50%;
+   max-width: 768px;
+   border-radius: 3px;
+   font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", 
+    "Ubuntu", "Cantarell", "Fira Sans", 
+    "Droid Sans", "Helvetica Neue", sans-serif
+   ;
 }
 .post-head{
    display: flex;
    justify-content: space-between;
    align-items: baseline;
-   padding-bottom: 5px;
    border-bottom: #6a1b9a .5px solid;
 }
 .post .body{
-   padding: 5px 0;
    font-size: 14px;
+}
+.cmt-frm {
+   margin-top: .5rem;
+   outline: #6a1b9a .8px solid;
+   padding: .2rem;
+   display: flex;
+   gap: .6rem;
+   border-radius: 3px;
+   max-height: 2.5rem;
 }
 
 /* r-pc */
