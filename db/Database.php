@@ -4,6 +4,10 @@ class Database{
    // DB PARAMS
 
    // local dev server
+   private $host;
+   private $db;
+   private $username;
+   private $pwd;
    private $conn;
    
    public function __construct() {
