@@ -22,7 +22,7 @@ class Database{
       $this->conn = null;
 
       try {
-         $this->conn = new PDO('mysql:host=' . $host . ';dbname=' . $db, $username, $pwd);
+         $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->db, $this->username, $this->pwd);
          $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch (PDOException $e) {
          echo "An error occured: $e";
