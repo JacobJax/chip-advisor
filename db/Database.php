@@ -4,11 +4,14 @@ class Database{
    // DB PARAMS
 
    // local dev server
-   $host = getenv('DB_HOST');
-   $db = getenv('DB_NAME');
-   $username = getenv('DB_USERNAME');
-   $pwd = getenv('DB_PWD');
    private $conn;
+   
+   public function __construct() {
+      $this->host = getenv('DB_HOST');
+      $this->db = getenv('DB_NAME');
+      $this->username = getenv('DB_USERNAME');
+      $this->pwd = getenv('DB_PWD');
+   }
 
    // DB CONNECT
    public function connect() {
