@@ -120,6 +120,7 @@ nav{
 .det-form{
    background: #fafafa;
    padding: var(--sm-spacing);
+   border-radius: 3px;
 }
 .det-form input[type=text], input[type=password], input[type=email] {
    width: 100%;
