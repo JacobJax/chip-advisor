@@ -26,7 +26,7 @@ function getOcc($conn) {
 
 ?>
 
-   <div class="det-form-container">
+   <div class="det-form-container span-max">
       <h3 style="text-align: center;">Recommend PC</h3>
       <br>
       <form class="det-form" id="rc-form">
@@ -58,12 +58,12 @@ function getOcc($conn) {
             <br>
          </div>
       </form>
-   </div>
-   <details>
-      <summary id="pcs-v" style="color: blue; cursor:pointer; text-align: center;"></summary>
-      <section class="pc-container" id="pc-v">
+      <details>
+         <summary id="pcs-v" style="color: blue; cursor:pointer; text-align: center;"></summary>
+         <section class="pc-container" id="pc-v">
 
-      </section>
-   </details>
+         </section>
+      </details>
+   </div>
 </body>
 </html>

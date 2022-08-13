@@ -12,9 +12,9 @@
 <body>
 
    <nav>
-      <div class="flex-r nav-flex span-max">
+      <div class="flex-r span-max nav-flex">
          <div class="nav-header">
-         <h3><a href="../index.php" style="color: #6a1b9a;">Chip advisor</a></h3>
+            <h3><a href="../index.php" style="color: #6a1b9a;">Chip advisor</a></h3>
          </div>
          <div class="dissapear">
             <div class="nav-options">

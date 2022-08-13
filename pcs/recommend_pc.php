@@ -1,5 +1,9 @@
 <?php
 
+// *, 
+// `🤖`; sorry future me
+// **
+
 require_once('../db/Database.php');
 $db = new Database();
 $conn = $db->connect();
