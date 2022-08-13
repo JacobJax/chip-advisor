@@ -4,10 +4,10 @@ class Database{
    // DB PARAMS
 
    // local dev server
-   private $host = getenv('DB_HOST');
-   private $db = getenv('DB_NAME');
-   private $username = getenv('DB_USERNAME');
-   private $pwd = getenv('DB_PWD');
+   $host = getenv('DB_HOST');
+   $db = getenv('DB_NAME');
+   $username = getenv('DB_USERNAME');
+   $pwd = getenv('DB_PWD');
    private $conn;
 
    // DB CONNECT
