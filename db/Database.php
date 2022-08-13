@@ -4,11 +4,18 @@ class Database{
    // DB PARAMS
 
    // local dev server
-   private $host = 'localhost';
-   private $db = 'chip_advisor';
-   private $username = 'root';
-   private $pwd = '';
+   private $host;
+   private $db;
+   private $username;
+   private $pwd;
    private $conn;
+   
+   public function __construct() {
+      $this->host = getenv('DB_HOST');
+      $this->db = getenv('DB_NAME');
+      $this->username = getenv('DB_USERNAME');
+      $this->pwd = getenv('DB_PWD');
+   }
 
    // DB CONNECT
    public function connect() {
