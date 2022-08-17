@@ -26,7 +26,7 @@ function checkLike($pid, $conn)
 
 ?>
    <section>
-      <div class="span-max jumbo">
+      <div class="span-max jumbo backloader backloader-jumbo">
          <div class="jumbo-head">
             <h1>Get the Best Recommendation and Deal that suits your need</h1>
             <div class="jumbo-links">
@@ -41,12 +41,14 @@ function checkLike($pid, $conn)
       <?php $pcs = getPCS($conn) ?>
       <?php foreach($pcs as $pc) {?>
          <div class="pc">
-            <img src="./<?php echo $pc['avatar'] ?>">
+            <div class="pc-ill backloader backloader-img">
+               <img src="./<?php echo $pc['avatar'] ?>">
+            </div>
             <div class="pc-details">
-               <h4><?php echo $pc['name'] ?></h4>
-               <p><?php echo "ram: " . $pc['ram'] . " | hdd: " . $pc['hdd'] . " | screen: " . $pc['screen'] . " | os: " . $pc['os'] . " | body: " . $pc['body'] ?></p>
+               <h4 class="backloader backloader-text"><?php echo $pc['name'] ?></h4>
+               <p class="price backloader backloader-text"><?php echo "ram: " . $pc['ram'] . " | hdd: " . $pc['hdd'] . " | screen: " . $pc['screen'] . " | os: " . $pc['os'] . " | body: " . $pc['body'] ?></p>
                <div class="price">
-                  <p>Price: Ksh<?php echo $pc['price'] ?></p>
+                  <p class="backloader backloader-text">Price: Ksh<?php echo $pc['price'] ?></p>
                </div>
                <div class="pc-action">
                   <?php if(!isset($_SESSION['uid'])){ ?>
