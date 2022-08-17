@@ -327,7 +327,7 @@ input[type=file]::file-selector-button {
    right: 0;
    top: 0;
    bottom: 0;
-   background-color: #fcfcfc;
+   background-color: #cfd8dc ;
    z-index: -1;
 
    animation-name: fade;
