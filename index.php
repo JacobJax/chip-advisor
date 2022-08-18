@@ -40,7 +40,7 @@ function checkLike($pid, $conn)
    <section class="pc-container span-max" id="pcs">
       <?php $pcs = getPCS($conn) ?>
       <?php foreach($pcs as $pc) {?>
-         <div class="pc backloader">
+         <div class="pc">
             <div class="pc-ill backloader backloader-img">
                <img src="./<?php echo $pc['avatar'] ?>">
             </div>
