@@ -18,7 +18,7 @@ $conn = $db->connect();
          <?php foreach($u_pc as $pc) {?>
             <div class="r-pc">
                <div class="r-ill">
-                  <img src="..<?php echo $pc['avatar']?>" alt="">
+                  <img src="..<?php echo $pc['avatar']?>" alt="" class="backloader">
                </div>
                <div class="r-det">
                   <div class="r-det-top">

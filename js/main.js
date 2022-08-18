@@ -47,20 +47,21 @@ rcForm.addEventListener('submit', e => {
       res.forEach(re => {
          sec.innerHTML += `
             <div class="pc">
-               <img src="../${re.avatar}">
+               <div class="pc-ill" style="height: 200px;">
+                  <img src="../${re.avatar}" class="backloader" style="height: 100%; width: 100%;">
+               </div>
                <div class="pc-details">
-                  <h4>${re.name}</h4>
-                  <p>ram: ${re.ram} | hdd: ${re.hdd} | screen: ${re.screen} | os: ${re.os} | body: ${re.body}</p>
+                  <h4 class="backloader backloader-text">${re.name}</h4>
+                  <p class="backloader backloader-text">ram: ${re.ram} | hdd: ${re.hdd} | screen: ${re.screen} | os: ${re.os} | body: ${re.body}</p>
                   <div class="price">
-                     <p>Price: ${re.price}</p>
+                     <p class="backloader backloader-text">Price: ${re.price}</p>
                   </div>
                   <br>
                </div>
-               <a href="pc.php?pid=${re.pc_id}" style="text-align: center; background-color: #6a1b9a;padding: 5px; color: white;">View</a>
+               <a href="pc.php?pid=${re.pc_id}" style="text-align: center; background-color: #6a1b9a;padding: 5px; color: white; border-radius: 3px;">View</a>
             </div>
          `
       })
-      // e.target.innerText = "👍Liked"
    }
    xhr.send("occ="+occ+"&price="+price)
 })

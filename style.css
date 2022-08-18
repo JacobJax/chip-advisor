@@ -4,9 +4,10 @@
 nav{
    margin-bottom: var(--sm-spacing);
    position: sticky;
-   top: .4rem;
+   top: 0;
    background-color: #fff;
    z-index: 2;
+   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1)
 }
 .flex-r{
    display: flex;
@@ -79,6 +80,8 @@ nav{
    border-radius: 3px;
    display: flex;
    flex-direction: column;
+   background-color: #fff;
+   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 .pc-ill {
    border-radius: 5px;
@@ -263,7 +266,6 @@ input[type=file]::file-selector-button {
 }
 .post{
    background-color: #fff;
-   padding: .6rem;
    margin: auto;
    margin-bottom: 10px;
    max-width: 768px;
@@ -273,24 +275,36 @@ input[type=file]::file-selector-button {
     "Ubuntu", "Cantarell", "Fira Sans", 
     "Droid Sans", "Helvetica Neue", sans-serif
    ;
+   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 .post-head{
    display: flex;
    justify-content: space-between;
    align-items: baseline;
-   border-bottom: #6a1b9a .5px solid;
+   border-bottom: #836f8f .5px solid;
+}
+.push-in, .post-btm{
+   padding-left: 1.2rem;
+   padding-right: 1.2rem;
+}
+.post-top{
+   padding-bottom: .5rem;
+}
+.post-btm {
+   border-top: #836f8f .7px solid;
+   padding-bottom: .7rem;
 }
 .post .body{
-   font-size: 14px;
+   font-size: 1rem;
 }
 .cmt-frm {
-   margin-top: .5rem;
-   outline: #6a1b9a .8px solid;
+   margin-top: .8rem;
    padding: .2rem;
    display: flex;
+   align-items: center;
    gap: .6rem;
    border-radius: 3px;
-   max-height: 2.5rem;
+   min-height: 2.5rem;
 }
 
 /* r-pc */
@@ -316,6 +330,7 @@ input[type=file]::file-selector-button {
 /* loading effect */
 .backloader{
    position: relative;
+   border-radius: 3px;
 }
 .backloader-text {
    background-color: #fff;
