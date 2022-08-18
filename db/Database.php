@@ -15,6 +15,11 @@ class Database{
       $this->db = getenv('DB_NAME');
       $this->username = getenv('DB_USERNAME');
       $this->pwd = getenv('DB_PWD');
+
+      //$this->host = "localhost";
+      //$this->db = "chip_advisor";
+      //$this->username = "root";
+      //$this->pwd = "";
    }
 
    // DB CONNECT

@@ -36,16 +36,16 @@ function checkLike($pid, $conn)
 <?php foreach($pcs as $pc) {?>
    <br>
 <div class="pc" style="margin: auto; width: 50%; height: 60%;">
-   <img src="../<?php echo $pc['avatar'] ?>">
+   <img src="../<?php echo $pc['avatar'] ?>" class="backloader">
    <div class="pc-details">
-      <h4><?php echo $pc['name'] ?></h4>
-      <p><?php echo "ram: " . $pc['ram'] . " | hdd: " . $pc['hdd'] . " | screen: " . $pc['screen'] . " | os: " . $pc['os'] . " | body: " . $pc['body'] ?></p>
+      <h4 class="backloader backloader-text"><?php echo $pc['name'] ?></h4>
+      <p class="backloader backloader-text"><?php echo "ram: " . $pc['ram'] . " | hdd: " . $pc['hdd'] . " | screen: " . $pc['screen'] . " | os: " . $pc['os'] . " | body: " . $pc['body'] ?></p>
       <div class="price">
-         <p>Price: <?php echo $pc['price'] ?></p>
+         <p class="backloader backloader-text">Price: <?php echo $pc['price'] ?></p>
       </div>
       <br>
       <div class="pc-action">
-         <a href="#" class="l-btn">
+         <a href="#">
             <input type="hidden" name="pid" id="pid" value="<?php echo $pc['pc_id'] ?>">
             <?php
                if(!isset($_SESSION['uid'])){ 
@@ -59,7 +59,7 @@ function checkLike($pid, $conn)
                } 
             ?>
          </a>
-         <a href="mailto:<?php echo $pc['email'] ?>" class="v-btn">📞Contact retailer</a>
+         <a href="mailto:<?php echo $pc['email'] ?>">📞Contact retailer</a>
       </div>
    </div>
 </div>

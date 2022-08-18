@@ -34,7 +34,7 @@ cmForms.forEach(frm => {
       xhr.onload = () => {
          console.log(xhr.responseText)
          e.target.cmt.value = ""
-         cmCont.innerHTML += `<p style='padding-bottom: 5px; font-weight: lighter; font-size: 15px;'><span style='color: #bdbdbd; font-size: 13px;'><span style='font-size: 17px'>👨‍💻</span>You: </span> ${cmt}</p>`
+         cmCont.innerHTML += `<p style='padding-bottom: 5px; font-weight: lighter; font-size: .9rem;'><span style='color: #bdbdbd; font-size: .9rem;'>You: </span> ${cmt}</p>`
       }
       xhr.send("post="+cmt+"&pid="+pid)
    })
