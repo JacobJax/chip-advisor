@@ -53,7 +53,7 @@ function getName($id, $conn)
                      <p><small><?php echo $post['created_on'] ?></small></p>
                   </div>
                   <div class="push-in">
-                     <p style="font-size: 1.1rem;"><?php echo $post['caption'] ?></p>
+                     <p style="font-size: 1rem;"><?php echo $post['caption'] ?></p>
                   </div>
                   <div class="action push-in">
                      <details>
