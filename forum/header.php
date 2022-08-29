@@ -13,7 +13,7 @@
 <body style="background:#fafafa">
 
    <nav style="border-radius: 3px;">
-      <div class="flex-r nav-flex span-max">
+      <div class="flex-r nav-flex span-max nav-cont">
          <div class="nav-header">
             <h3><a href="./index.php">Chip advisor</a></h3>
          </div>

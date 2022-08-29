@@ -12,7 +12,7 @@
 <body>
 
    <nav>
-      <div class="flex-r nav-flex span-max">
+      <div class="flex-r nav-flex span-max nav-cont">
          <div class="nav-header">
             <h3><a href="./index.php" style="color: #6a1b9a;">Chip advisor</a></h3>
          </div>
