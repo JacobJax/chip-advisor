@@ -9,10 +9,6 @@ nav{
    z-index: 2;
    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1)
 }
-.flex-r{
-   display: flex;
-   /* justify-content: space-evenly; */
-}
 :is(.nav-header) a {
    font-size: var(--text-md);
    font-family:'Roboto', sans-serif;
@@ -30,6 +26,28 @@ nav{
 }
 .dissapear {
    display: none;
+}
+.nav-cont {
+   position: relative;
+}
+.dropdown {
+   position: absolute;
+   top: calc(var(--lg-spacing) + var(--sm-spacing));
+   background-color: #fff;
+   right: var(--sm-spacing);
+   border-radius: 3px;
+   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+   outline: rgb(0 0 0 / 0.1) .7px solid;
+}
+.drop-elms {
+   display: flex;
+   padding: var(--sm-spacing);
+   gap: var(--sm-spacing);
+   flex-direction: column;
+}
+:is(.drop-elms) a {
+   font-size: 1rem;
+   font-family:'Roboto', sans-serif;
 }
 
 /* jumbotron */
